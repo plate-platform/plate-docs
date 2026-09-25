@@ -1,0 +1,162 @@
+/* ──────────────────────────────────────────────────────────────
+   Plate Platform — Docusaurus Custom Theme
+   Colors sourced from plate-mfe/agents-factory-mfe/src/style.css
+   Primary:  Indigo-600  (#4F46E5)
+   Dark bg:  Slate-950   (#020617)
+   ────────────────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Tokens ───────────────────────────────────────────────────── */
+:root {
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Primary = Plate indigo-600 */
+  --ifm-color-primary:         #4f46e5;
+  --ifm-color-primary-dark:    #4338ca;
+  --ifm-color-primary-darker:  #3730a3;
+  --ifm-color-primary-darkest: #312e81;
+  --ifm-color-primary-light:   #6366f1;
+  --ifm-color-primary-lighter: #818cf8;
+  --ifm-color-primary-lightest:#a5b4fc;
+
+  --ifm-code-font-size: 90%;
+  --ifm-border-radius: 8px;
+  --docusaurus-highlighted-code-line-bg: rgba(99, 102, 241, 0.08);
+
+  /* Light mode surfaces = slate-50 / white */
+  --ifm-background-color: #f8fafc;
+  --ifm-background-surface-color: #ffffff;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-footer-background-color: #0f172a;
+  --ifm-toc-border-color: #e2e8f0;
+  --ifm-hr-border-color: #e2e8f0;
+}
+
+/* ── Dark mode = Plate slate-950/900 palette ─────────────────── */
+[data-theme='dark'] {
+  --ifm-color-primary:         #818cf8;
+  --ifm-color-primary-dark:    #6366f1;
+  --ifm-color-primary-darker:  #4f46e5;
+  --ifm-color-primary-darkest: #4338ca;
+  --ifm-color-primary-light:   #a5b4fc;
+  --ifm-color-primary-lighter: #c7d2fe;
+  --ifm-color-primary-lightest:#e0e7ff;
+
+  --ifm-background-color: #020617;        /* slate-950 */
+  --ifm-background-surface-color: #0f172a; /* slate-900 */
+  --ifm-navbar-background-color: #0f172a;
+  --ifm-footer-background-color: #020617;
+  --ifm-toc-border-color: #1e293b;         /* slate-800 */
+  --ifm-hr-border-color: #1e293b;
+  --ifm-card-border-color: #1e293b;
+  --docusaurus-highlighted-code-line-bg: rgba(129, 140, 248, 0.10);
+  --ifm-color-content: #e2e8f0;
+  --ifm-heading-color: #f1f5f9;
+  --ifm-link-color: #818cf8;
+}
+
+/* ── Navbar ─────────────────────────────────────────────────── */
+.navbar {
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+  box-shadow: none;
+}
+
+.navbar__title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+[data-theme='dark'] .navbar {
+  background: #0f172a;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────── */
+.menu__link--active {
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+[data-theme='dark'] .menu__link:hover {
+  background: rgba(99, 102, 241, 0.08);
+}
+
+/* ── Cards ─────────────────────────────────────────────────── */
+.card {
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  border-color: #4f46e5;
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.12);
+}
+
+/* ── Admonitions — match Plate badge colors ─────────────────── */
+.alert--info    { --ifm-alert-background-color: rgba(59, 130, 246, 0.08); border-color: rgba(59, 130, 246, 0.3); }
+.alert--warning { --ifm-alert-background-color: rgba(245, 158, 11, 0.08); border-color: rgba(245, 158, 11, 0.3); }
+.alert--danger  { --ifm-alert-background-color: rgba(239, 68, 68, 0.08);  border-color: rgba(239, 68, 68, 0.3); }
+.alert--success { --ifm-alert-background-color: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.3); }
+
+/* ── Code blocks ───────────────────────────────────────────── */
+[data-theme='dark'] pre {
+  background: #0f172a !important;
+  border: 1px solid #1e293b;
+}
+
+/* ── Feature hero on index page ─────────────────────────────── */
+.hero--primary {
+  background: linear-gradient(135deg, #020617 0%, #0f172a 40%, #1e1b4b 100%);
+  border-bottom: 1px solid #1e293b;
+}
+
+.hero__title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #e0e7ff 0%, #818cf8 50%, #4f46e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero__subtitle {
+  color: #94a3b8;
+  font-size: 1.2rem;
+}
+
+/* ── Mermaid diagram background ─────────────────────────────── */
+[data-theme='dark'] .docusaurus-mermaid-container svg {
+  background: transparent;
+}
+
+/* ── Table ─────────────────────────────────────────────────── */
+table thead tr {
+  background: rgba(99, 102, 241, 0.06);
+}
+
+[data-theme='dark'] table {
+  border-color: #1e293b;
+}
+
+[data-theme='dark'] table thead tr {
+  background: rgba(99, 102, 241, 0.1);
+}
+
+[data-theme='dark'] table tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* ── Smooth transitions ─────────────────────────────────────── */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Scrollbar (matches Plate) ─────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
