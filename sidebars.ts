@@ -8,6 +8,10 @@ const sidebars: SidebarsConfig = {
       label: 'Why Plate for Enterprise?',
     },
     {
+      type: 'doc',
+      id: 'executive-summary',
+    },
+    {
       type: 'category',
       label: '🏭 Agent Factory',
       collapsible: false,
